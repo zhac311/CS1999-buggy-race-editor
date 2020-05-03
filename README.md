@@ -1,7 +1,7 @@
 CS1998: Buggy Race Editor
 =========================
 
-> GitHub repo: [https://github.com/RHUL-CS-Projects/CS1998-buggy-race-editor](RHUL-CS-Projects/CS1998-buggy-race-editor)
+> GitHub repo: [RHUL-CS-Projects/CS1998-buggy-race-editor](https://github.com/RHUL-CS-Projects/CS1998-buggy-race-editor])
 >
 >
 > This is the "buggy editor" component of the Foundation Year Computer Science
