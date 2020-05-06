@@ -24,7 +24,7 @@ print("- Opened database successfully in file \"{}\"".format(DATABASE_FILE))
 
 con.execute("""
 
-  CREATE TABLE buggies (
+  CREATE TABLE IF NOT EXISTS buggies (
     id                    INTEGER PRIMARY KEY,
     qty_wheels            INTEGER DEFAULT 4,
     flag_color            VARCHAR(20),
@@ -34,13 +34,18 @@ con.execute("""
 
 """)
 
-print("- Table \"buggies\" created successfully")
+print("- Table \"buggies\" exists OK")
 
 cur = con.cursor()
-cur.execute("INSERT INTO buggies (qty_wheels) VALUES (4)")
-con.commit()
 
-print("- Added one 4-wheeled buggy")
+cur.execute("SELECT * FROM buggies LIMIT 1")
+rows = cur.fetchall()
+if len(rows) == 0:
+  cur.execute("INSERT INTO buggies (qty_wheels) VALUES (4)")
+  con.commit()
+  print("- Added one 4-wheeled buggy")
+else:
+  print("- Found a buggy in the database, nice")
 print("- done")
 
 con.close()
