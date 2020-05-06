@@ -1,3 +1,9 @@
+# dependency files updated by replit:
+# ignore these to stop them troubling webdev Foundation
+# students who don't really need to know about them:
+poetry.lock
+pyproject.toml
+
 # explicitly deny the editor's default SQLite database file:
 database.db
 
