@@ -5,12 +5,15 @@ app = Flask(__name__)
 DATABASE_FILE = "database.db"
 DEFAULT_BUGGY_ID = "1"
 
+BUGGY_RACE_SERVER_URL = "http://rhul.buggyrace.net"
+
+
 #------------------------------------------------------------
 # the index page
 #------------------------------------------------------------
 @app.route('/')
 def home():
-   return render_template('index.html')
+   return render_template('index.html', server_url=BUGGY_RACE_SERVER_URL)
 
 #------------------------------------------------------------
 # creating a new buggy:
