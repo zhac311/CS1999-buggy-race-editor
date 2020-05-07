@@ -1,9 +1,6 @@
 CS1998: Buggy Race Editor
 =========================
 
-> GitHub repo: [RHUL-CS-Projects/CS1998-buggy-race-editor](https://github.com/RHUL-CS-Projects/CS1998-buggy-race-editor])
->
->
 > This is the "buggy editor" component of the Foundation Year Computer Science
 > project at RHUL.
 
@@ -14,8 +11,7 @@ This is the skeleton of an application for editing a racing buggy.
 
 It runs as a webserver so you can edit the configuration of a buggy in your
 browser. The editor can then generate the data, in JSON format, that you need
-to add to the
-[race server](#TODO-URL-NOT-YET-PUBLISHED).
+in order to enter races on the [race server](http://rhul.buggyrace.net).
 
 The application is written in Python3 using the
 [Flask](https://palletsprojects.com/p/flask/) microframework.
@@ -25,16 +21,30 @@ The application is written in Python3 using the
 > but from that point on you'll need to change pretty much everything to make
 > it better (including switching away from SQLite, perhaps?). 
 
+GitHub repo: [RHUL-CS-Projects/CS1998-buggy-race-editor](https://github.com/RHUL-CS-Projects/CS1998-buggy-race-editor])
 
-Developing in a browswer
-------------------------
+
+Developing in a browswer: repl.it
+---------------------------------
 
 We recommend you clone/download this repo onto your own machine where you can
 begin developing on it: see the installation and set up instructions below (of
-course we also talk you through this at the start of the project). But if you
-have problems with that, or you don't have access to your own machine, you can
-work on it on [https://repl.it](https://repl.it). See the course notes or ask
-for details!
+course we also talk you through this at the start of the project).
+
+But if you have problems with that, or you don't have access to your own
+machine, you can work on it on [https://repl.it](https://repl.it).
+
+* fork this repo into your own GitHub account
+* log into repl.it
+* click on "+ new repl"
+* click on "Import from GitHub"
+* enter the URL of your forked repo
+* click **Import from GitHub**
+* when it's finished, click **Run**
+
+You've got a file browser, editor, website pane and shell window all in your
+browser. Because you forked from your copy of the repo, you can `git push`
+any changes you make back there.
 
 
 Installation & set up
@@ -45,7 +55,34 @@ operating system you're using. The principles are the same, but the way to
 execute them is slightly different.
 
 
-### Unix and Max OS
+### Summary
+
+The recommended way to run this app this on your own machine is to first 
+install it:
+
+* install the software (clone this repo)
+* create a virtual evironment
+* install the dependencies (e.g., Flask) in that environment
+
+Then, to run the application:
+
+* activate the virtual environment
+* run the app
+* kill the app with Ctl-C
+* deactivate the virutal environment
+
+This varies a little depending on which platform you are using.
+
+### Prerequisites
+
+You must have these two things installed before you can start:
+
+* [Python 3](https://www.python.org) for programming
+* [Git](https://git-scm.com) for version control
+
+If they are not already installed on your machine, see the
+downloads/installation instructions on their respevtive websites.
+
 
 #### Installation
 
@@ -54,6 +91,12 @@ Python modules. Instead of installing them on your whole machine (which might
 be a problem if other applications need different versions of the same
 libraries) it's best to create a virtual environment just for this project, and
 work inside that.
+
+On Windows you can follow these instructions in the PowerShell. Alternatively
+if you use the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+(WSL) you can follow the instructions as Linux.
+
+For Mac or Unix-like systems, open a Terminl window.
 
 To create the virtual environment, first `cd` to the directory which contains
 the application files (you might have use `git clone` to create it). Then do:
@@ -68,14 +111,18 @@ time to activate the virtual environment. Once you've activated it, all
 subsequent python commands operate within the scope of this environment
 (instead of your whole machine).
 
-Activate the virtual environment:
+Activate the virtual environment. On Windows, do:
+
+    .\venv\Scripts\activate
+    
+On Linux or Mac:
 
     source venv/bin/activate
 
-Next, install the Flask library. Because you activated `venv` Flask will be
-installed in this virtual environment:
+Next, install the libraries the app needs. Because you activated `venv`, they
+will be installed in this virtual environment:
 
-    pip install -U flask
+    pip install -r requirements.txt
 
 Finally, set up the database:
 
@@ -92,13 +139,26 @@ If you're not already in the project's directory, `cd` into it.
 
 Then, if you haven't done so already, activate the virtual environment:
 
+
+Activate the virtual environment. On Windows, do:
+
+    .\venv\Scripts\activate
+    
+On Linux or Mac:
+
     source venv/bin/activate
 
-Set the environment variable to `development`:
+
+Set the environment variable to `development`. On Windows do:
+
+    $env:FLASK_ENV = 'development'
+
+On Linux or Mac:
 
     export FLASK_ENV=development
 
-Now you're ready to run the application:
+
+Now you can run the application:
 
     python3 app.py
 
@@ -125,20 +185,7 @@ If you've finished, you can deactivate the virtual environment:
 You're done!
 
 
-### Windows
-
-#### WSL
-
-If you're on Windows10 and you run into problems with the command below, it
-might be worth enabling the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-(WSL).
-
-
-#### Installation
-
-TODO.
-
 ---
 
-*RHUL CS1998 (that's a course number, not a year ;-) )*
+*RHUL CS1998... that's a course number, not a year* ;-)
 
