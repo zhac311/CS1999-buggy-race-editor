@@ -1,4 +1,4 @@
-CS1998: Buggy Race Editor
+CS1999: Buggy Race Editor
 =========================
 
 > This is the "buggy editor" component of the Foundation Year Computer Science
@@ -21,7 +21,7 @@ The application is written in Python3 using the
 > but from that point on you'll need to change pretty much everything to make
 > it better (including switching away from SQLite, perhaps?). 
 
-GitHub repo: [RHUL-CS-Projects/CS1998-buggy-race-editor](https://github.com/RHUL-CS-Projects/CS1998-buggy-race-editor])
+GitHub repo: [RHUL-CS-Projects/CS1999-buggy-race-editor](https://github.com/RHUL-CS-Projects/CS1999-buggy-race-editor])
 
 
 Developing in a browswer: repl.it
@@ -187,5 +187,5 @@ You're done!
 
 ---
 
-*RHUL CS1998... that's a course number, not a year* ;-)
+*RHUL CS1999... that's a course number, not a year* ;-)
 
